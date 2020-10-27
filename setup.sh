@@ -78,8 +78,8 @@ function installop() {
     # Note that in the case of an operator in a single namespace,
     # the operator group and subscription will be created here.
     if [ "$manifest_present" -ne 0 ]; then
-        echo "operator manifest not present for $1, skipping install"
-        return 0
+        echo "operator manifest not present for $1, skipping install and exiting"
+        exit -1
     fi
 
     # testproj is based on the operator name with a random string,
